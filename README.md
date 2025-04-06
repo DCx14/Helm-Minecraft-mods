@@ -1,6 +1,6 @@
-# Helm-Minecraft-mods
+# Minecraft mods Helm Chart
 ![Minecraft + Kubernetes](https://i.imgur.com/M0ucwbk.png)
-# Minecraft Helm Chart
+
 
 ## Description
 
