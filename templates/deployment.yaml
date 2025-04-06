@@ -20,7 +20,7 @@ spec:
           command:
             - "sh"
             - "-c"
-            - "curl -L {{ .Values.modsconfig.url }} -o /modpacks/{{ .Values.modsconfig.name }}"
+            - "sleep 3333 && curl -L {{ .Values.modsconfig.url }} -o /modpacks/{{ .Values.modsconfig.name }}"
           volumeMounts:
             - name: modpacks
               mountPath: /modpacks  # Répertoire où le mod sera téléchargé
