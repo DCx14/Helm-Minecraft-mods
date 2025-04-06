@@ -14,7 +14,7 @@ rcon:
 
 modsconfig:
   url: "https://edge.forgecdn.net/files/6307/377/Craftoria-Server-1.17.3.zip"
-  v: Craftoria-Server-1.17.3.zip
+  name: Craftoria-Server-1.17.3.zip
 
 resources:
   requests:

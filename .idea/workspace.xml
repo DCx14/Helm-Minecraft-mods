@@ -65,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1743960155510</updated>
       <workItem from="1743960156530" duration="2130000" />
-      <workItem from="1743962728343" duration="1114000" />
+      <workItem from="1743962728343" duration="1476000" />
     </task>
     <task id="LOCAL-00001" summary="helm minecraft mods">
       <option name="closed" value="true" />
@@ -107,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743963753984</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add init container download mods">
+      <option name="closed" value="true" />
+      <created>1743964048156</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743964048156</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
