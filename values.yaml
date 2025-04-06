@@ -1,0 +1,38 @@
+image:
+  repository: itzg/minecraft-server
+  tag: latest
+
+minecraft:
+  mode: survival
+  type: CURSEFORGE
+  initMemory: 8G
+  maxMemory: 12G
+  modpackPath: /modpacks/your-modpack.zip
+
+rcon:
+  password: "minsfdsf345FDFon"
+
+resources:
+  requests:
+    cpu: "4"
+    memory: "12Gi"
+  limits:
+    cpu: "8"
+    memory: "16Gi"
+
+persistence:
+  data:
+    claimName: minecraft-data
+    storageClass: openebs-hostpath
+    accessMode: ReadWriteOnce
+    size: 250Gi
+
+  modpacks:
+    claimName: modpacks
+    storageClass: openebs-hostpath
+    accessMode: ReadWriteOnce
+    size: 25Gi
+
+service:
+  type: LoadBalancer
+  port: 25565

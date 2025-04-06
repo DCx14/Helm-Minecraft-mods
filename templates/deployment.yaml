@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "minecraft.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ include "minecraft.name" . }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "minecraft.name" . }}
+  serviceName: {{ include "minecraft.fullname" . }}-headless
+  template:
+    metadata:
+      labels:
+        app: {{ include "minecraft.name" . }}
+    spec:
+      containers:
+        - name: minecraft-server
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          env:
+            - name: EULA
+              value: "TRUE"
+            - name: MODE
+              value: "{{ .Values.minecraft.mode }}"
+            - name: TYPE
+              value: "{{ .Values.minecraft.type }}"
+            - name: INIT_MEMORY
+              value: "{{ .Values.minecraft.initMemory }}"
+            - name: MAX_MEMORY
+              value: "{{ .Values.minecraft.maxMemory }}"
+            - name: CF_SERVER_MOD
+              value: "{{ .Values.minecraft.modpackPath }}"
+            - name: ALLOW_FLIGHT
+              value: "TRUE"
+            - name: USE_AIKAR_FLAGS
+              value: "TRUE"
+            - name: RCON_PASSWORD
+              value: "{{ .Values.rcon.password }}"
+          ports:
+            - name: minecraft
+              containerPort: 25565
+            - name: minecraft-rcon
+              containerPort: 25575
+            - name: metrics
+              containerPort: 19565
+          resources:
+            requests:
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
+          volumeMounts:
+            - name: minecraft-data
+              mountPath: /data
+            - name: modpacks
+              mountPath: /modpacks
+      volumes:
+        - name: minecraft-data
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.data.claimName }}
+        - name: modpacks
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.modpacks.claimName }}
