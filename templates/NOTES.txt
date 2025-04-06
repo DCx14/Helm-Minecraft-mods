@@ -1,1 +1,80 @@
-server minecraft mods by oracle
+=================================================================
+        🎮 Minecraft Helm Chart - Information d'installation 🎮
+=================================================================
+
+🌟 Merci d'avoir utilisé ce chart Helm pour déployer un serveur Minecraft. 
+Votre serveur est prêt et fonctionne avec les configurations que vous avez définies.
+
+---
+
+📜 **Informations utiles :**
+
+1️⃣ **Nom de l'application :**
+   → minecraft
+
+2️⃣ **Type de serveur déployé :**
+   → {{ .Values.minecraft.type }}
+
+3️⃣ **Mode de jeu configuré :**
+   → {{ .Values.minecraft.mode }}
+
+4️⃣ **Adresse du serveur Minecraft :**
+   → Votre service est exposé avec le type : `{{ .Values.service.type }}`
+   → Port d'accès au serveur : `{{ .Values.service.port }}`
+
+💡 Si vous utilisez un LoadBalancer, récupérez votre IP externe avec la commande suivante :
+   ```bash
+   kubectl get svc -n <votre-namespace>
+   ```
+
+---
+
+📦 **Ressources allouées :**
+   - **CPU demandé :** {{ .Values.resources.requests.cpu }}
+   - **Mémoire demandée :** {{ .Values.resources.requests.memory }}
+   - **Limites CPU :** {{ .Values.resources.limits.cpu }}
+   - **Limites Mémoire :** {{ .Values.resources.limits.memory }}
+
+---
+
+🛠️ **Persistance :**
+   Vos mondes et données sont sauvegardés de manière persistante :
+   - Volume des données serveur : `{{ .Values.persistence.data.size }}`
+   - Volume des modpacks : `{{ .Values.persistence.modpacks.size }}`
+
+---
+
+🔗 **Modpack utilisé :**
+   - URL : {{ .Values.modsconfig.url }}
+   - Nom : {{ .Values.modsconfig.name }}
+
+   Le modpack est téléchargé automatiquement à l'intérieur du pod.
+
+---
+
+🚧 **Probes de Liveness et Readiness :**
+⚠️ Veuillez noter que ce chart **ne configure pas de Readiness ou Liveness Probes**.
+Si nécessaire, nous recommandons d'ajouter des probes pour surveiller l'état du conteneur. 
+
+---
+
+✅ **Commandes rapides utiles :**
+
+📊 **Vérifier les logs du serveur :**
+   ```bash
+   kubectl logs statefulset.apps/minecraft -n <votre-namespace>
+   ```
+
+🔄 **Mettre à jour votre chart avec une nouvelle configuration :**
+   ```bash
+   helm upgrade minecraft . -f values.yaml -n <votre-namespace>
+   ```
+
+🚛 **Supprimer votre installation :**
+   ```bash
+   helm uninstall minecraft -n <votre-namespace>
+   ```
+
+=================================================================
+                       🌐 Bon jeu ! 🕹️
+=================================================================

@@ -201,6 +201,14 @@ Lors du déploiement:
 
 ---
 
+### Absence de Liveness et Readiness Probes
+
+Veuillez noter que ce chart Helm **ne définit pas de probes de "liveness" ou "readiness"** dans sa configuration actuelle. Cela signifie que Kubernetes ne surveillera pas automatiquement l'état de santé du serveur Minecraft et ne tentera pas de redémarrer ou remplacer le pod en cas de défaillance.
+
+Pour améliorer votre chart, vous pouvez ajouter des probes Kubernetes afin de :
+- Vérifier si le serveur est prêt à accepter des connexions (`readinessProbe`).
+- Vérifier si le serveur fonctionne correctement et redémarrer le conteneur en cas d'échec (`livenessProbe`).
+
 ## License
 
 Ce projet est sous licence **MIT**. Veuillez consulter [LICENSE](./LICENSE) pour plus de détails.
