@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d32714dc-764f-407e-b3f6-d0d0f3a2b5fa" name="Changes" comment="add init container download mods" />
+    <list default="true" id="d32714dc-764f-407e-b3f6-d0d0f3a2b5fa" name="Changes" comment="fix init sleep">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +48,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -65,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1743960155510</updated>
       <workItem from="1743960156530" duration="2130000" />
-      <workItem from="1743962728343" duration="1476000" />
+      <workItem from="1743962728343" duration="2768000" />
     </task>
     <task id="LOCAL-00001" summary="helm minecraft mods">
       <option name="closed" value="true" />
@@ -115,7 +118,23 @@
       <option name="project" value="LOCAL" />
       <updated>1743964048156</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix init">
+      <option name="closed" value="true" />
+      <created>1743964270186</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743964270186</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix init sleep">
+      <option name="closed" value="true" />
+      <created>1743964326253</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743964326253</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +155,8 @@
     <MESSAGE value="helm minecraft mods" />
     <MESSAGE value="helm minecraft mods delete namespace" />
     <MESSAGE value="add init container download mods" />
-    <option name="LAST_COMMIT_MESSAGE" value="add init container download mods" />
+    <MESSAGE value="fix init" />
+    <MESSAGE value="fix init sleep" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix init sleep" />
   </component>
 </project>
