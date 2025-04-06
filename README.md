@@ -196,7 +196,7 @@ Puis appliquez les modifications :
 ## Notes
 
 Lors du déploiement:
-- Assurez-vous que les URLs des modpacks ou des mods sont valides.
+- Assurez-vous que la value minecraft.modpackPath soit la meme que modsconfig.name sans le path, comme dans le fichier de values
 - Vérifiez les capacités disponibles pour votre stockage persistant (Taille minimale recommandée : `250Gi` pour les données + `25Gi` pour les modpacks).
 
 ---
